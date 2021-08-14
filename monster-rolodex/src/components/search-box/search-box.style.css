@@ -1,0 +1,15 @@
+#search {
+  width: 200px;
+  padding: 10px;
+  margin: 50px;
+  border: 5px solid #d9fa20;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.5s;
+  text-align: center;
+}
+
+#search:hover {
+  border: 5px solid #0b7046;
+  width: 400px;
+}

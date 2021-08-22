@@ -1,5 +1,6 @@
 import React from "react";
 
+import { signInWithGoogle } from "./../../firebase/firebase.utils";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import "./sign-in.styles.scss";
@@ -52,6 +53,9 @@ class SignIn extends React.Component {
           />
 
           <CustomButton type="submit">Sign in</CustomButton>
+          <CustomButton onClick={signInWithGoogle}>
+            Sign in with Google
+          </CustomButton>
         </form>
       </div>
     );
@@ -59,3 +63,15 @@ class SignIn extends React.Component {
 }
 
 export default SignIn;
+
+/* 
+ {
+    apiKey: "AIzaSyCKK6NflcVmo9Cp8SVKzf9dlAn_PBHEqGg",
+    authDomain: "react-crown-cloth.firebaseapp.com",
+    projectId: "react-crown-cloth",
+    storageBucket: "react-crown-cloth.appspot.com",
+    messagingSenderId: "921471415656",
+    appId: "1:921471415656:web:da4fa1e5cc79249bf712dd",
+    measurementId: "G-VPVJ7NHB83"
+  };
+*/

@@ -1,5 +1,18 @@
 body {
   padding: 20px 80px;
+  background-color: rgb(255, 241, 241);
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(245, 129, 129);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(235, 81, 81);
 }
 
 a {

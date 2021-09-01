@@ -7,21 +7,26 @@
   padding: 0 35px;
   margin: 0 5px;
   font-size: 15px;
-  background: rgb(34, 30, 240);
+  background: rgb(14, 12, 105);
   background-size: 100%;
   color: white;
   text-transform: uppercase;
   font-family: "Open Sans Condensed";
   font-weight: bolder;
-  border: 2px solid rgb(241, 53, 53);
+  // border-bottom: 2px solid rgb(241, 53, 53);
 
   cursor: pointer;
-  clip-path: polygon(29px 0, 100% 0, calc(100% - 29px) 100%, 0 100%);
-  transition: all 0.7s;
+  // clip-path: polygon(29px 0, 100% 0, calc(100% - 29px) 100%, 0 100%);
+  transition: all 0.5s;
 
   &:hover {
-    background: rgb(245, 64, 64);
-
-    border: 2px solid rgb(66, 63, 245);
+    background: rgb(60, 58, 163);
+    transform: translateY(-5px);
+    box-shadow: 2px 2px gray;
+    //border-bottom: 2px solid rgb(66, 63, 245);
   }
+}
+
+.signinwithgoogle {
+  background: brown;
 }

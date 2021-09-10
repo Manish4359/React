@@ -9,15 +9,17 @@
     height: 100%;
     width: 70px;
     padding: 25px;
+    // background: white;
   }
 
   .options {
-    width: 50%;
+    width: auto;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     cursor: pointer;
+    background: #5b84b1ff;
 
     .option {
       padding: 10px 15px;

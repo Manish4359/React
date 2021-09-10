@@ -2,8 +2,8 @@
   min-width: 165px;
   width: auto;
   height: 50px;
-  letter-spacing: 0.5px;
-  line-height: 50px;
+  //  letter-spacing: 0.5px;
+  // line-height: 50px;
   padding: 0 35px;
   margin: 0 5px;
   font-size: 15px;
@@ -12,9 +12,7 @@
   color: white;
   text-transform: uppercase;
   font-family: "Open Sans Condensed";
-  font-weight: bolder;
   // border-bottom: 2px solid rgb(241, 53, 53);
-
   cursor: pointer;
   // clip-path: polygon(29px 0, 100% 0, calc(100% - 29px) 100%, 0 100%);
   transition: all 0.5s;
@@ -29,4 +27,10 @@
 
 .signinwithgoogle {
   background: brown;
+}
+.addtocartbutton {
+  background: rgb(44, 109, 77);
+  padding: 0 25px;
+  margin: 0;
+  height: 40px;
 }

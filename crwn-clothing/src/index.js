@@ -1,8 +1,9 @@
 import React from "react";
+
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
 
+import { Provider } from "react-redux";
 import store from "./redux/store";
 
 import "./index.css";

@@ -23,6 +23,10 @@
     flex-direction: column;
     overflow-x: hidden;
     overflow-y: scroll;
+
+    .empty-message{
+      margin: 50px auto;
+    }
   }
 
   button {

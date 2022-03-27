@@ -12,3 +12,17 @@ export const addItemsToCart = (cartItems, addToCart) => {
   }
   return [...cartItems, { ...addToCart, quantity: 1 }];
 };
+
+export const removeItemsFromCart = (cartItems, removeFromCart) => {
+  
+    return cartItems.map(cartItem=>cartItem.id === removeFromCart.id
+      ? { ...cartItem, quantity: cartItem.quantity - 1 }
+      : cartItem)
+  
+};
+
+export const deleteItemsFromCart = (cartItems, deleteFromCart) => {
+  return cartItems.filter((cartItem) =>
+      cartItem.id !== deleteFromCart.id
+    );
+};

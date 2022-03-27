@@ -14,8 +14,13 @@ const CheckoutPage = ({ cartItems, total, cartItemsTotal }) => (
     <div className="checkout">
 
         <div className="cart">
-                {cartItems.map(cartItem => <CheckoutItem key={cartItem.id} cartItem={cartItem}/>)}
+                {
+                cartItems.length?
+                cartItems.map(cartItem => <CheckoutItem key={cartItem.id} cartItem={cartItem}/>):
+                <span>Your cart is Empty !!!</span>}
         </div>
+
+        {cartItems.length?
         <div className="price-details">
             <h3 >price details({cartItemsTotal} items)</h3>
             <div className="prices">
@@ -39,7 +44,7 @@ const CheckoutPage = ({ cartItems, total, cartItemsTotal }) => (
 
             </div>
 
-        </div>
+        </div>:""}
     </div>
 )
 const mapStateToProps = createStructuredSelector({

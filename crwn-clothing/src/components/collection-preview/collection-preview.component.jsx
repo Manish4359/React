@@ -1,4 +1,4 @@
- import React from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 import CollectionItem from "../collection-item/collection-item.component";
@@ -13,7 +13,8 @@ const CollectionPreview = ({ title, items }) => (
           if (index > 3) return;
         }
 
-        return <CollectionItem key={item.id} item={item} />;
+        return <div className="item" key={item.id}><CollectionItem  item={item} /></div>;
+
       })}
     </div>
   </div>

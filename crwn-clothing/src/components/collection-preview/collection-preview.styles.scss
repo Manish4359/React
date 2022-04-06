@@ -12,5 +12,11 @@
     display: flex;
     justify-content: space-between;
     height: 350px;
+
+    .item {
+      height: 360px;
+      width: 22%;
+      min-width: 165px;
+    }
   }
 }

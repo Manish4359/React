@@ -6,9 +6,9 @@
     padding: 10px;
     border: 2px solid transparent;
     border-radius: 10px;
-    background: rgb(167, 248, 208);
-    //border: 2px solid rgb(228, 228, 228);
+    background: rgba(94, 116, 243,1);
     margin-bottom: 10px;
+    color: white;
     transition: all 0.3s;
 
 
@@ -66,7 +66,7 @@
 
                 .btn-dec,
                 .btn-inc {
-                   box-sizing: border-box;
+                    box-sizing: border-box;
                     position: absolute;
                     left: 50%;
                     top: 50%;
@@ -79,8 +79,10 @@
 
                 }
 
-                
-                .btn-inc::before{
+
+
+
+                .btn-inc::before {
                     content: "";
                     box-sizing: border-box;
                     position: absolute;
@@ -96,10 +98,38 @@
 
 
                 }
+
+                &:hover {
+                    transform: scale(1.25);
+                }
             }
 
-            .btn:hover {
-                transform: scale(1.15);
+            .btn-d:hover {
+                background-color: red;
+
+                &>.btn-dec {
+
+                    background-color: white;
+
+                    &::before {
+                        background-color: white;
+                    }
+                }
+            }
+
+            .btn-i:hover {
+                background-color: rgb(0, 255, 21);
+
+
+                &>.btn-inc {
+
+                    background-color: white;
+
+                    &::before {
+                        background-color: white;
+                    }
+
+                }
             }
 
             .quantity {
@@ -111,6 +141,9 @@
 
     }
 
+    & > .product-remove{
+        display: none;
+    }
     .product-remove {
         position: absolute;
         right: 5px;
@@ -124,7 +157,16 @@
         transition: all 0.3s;
 
         &:hover {
-            transform: scale(1.23);
+            transform: scale(1.25);
+            background-color: red;
+
+            &>div {
+                background-color: white;
+
+                &::after {
+                    background-color: white;
+                }
+            }
         }
 
         .close {
@@ -156,8 +198,12 @@
 
     &:hover {
         transform: scale(1.02);
-        background: rgb(202, 255, 248);
-        border: 2px solid rgb(63, 226, 226);
-
+        background: rgb(61, 129, 207);
+        border: 2px solid rgb(62, 105, 184);
+        color: rgb(255, 255, 255);
+    
+        & >.product-remove{
+            display: block;
+        }
     }
 }

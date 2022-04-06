@@ -1,0 +1,25 @@
+.collection-page {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+        font-size: 38px;
+        margin: 0 auto 30px;
+    }
+
+    .items {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+
+        .item {
+            height: 360px;
+            width: 22%;
+            min-width: 165px;
+
+        }
+    }
+
+}

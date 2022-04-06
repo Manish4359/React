@@ -23,12 +23,12 @@ const CheckoutItem = ({cartItem,deleteItem,addItem,removeItem}) => {
             <span className="product-price">&#8377;{price}</span>
 
             <div className="product-quantity">
-                <div className="btn" onClick={cartItem.quantity>1?()=>removeItem(cartItem):()=>deleteItem(cartItem)}>
+                <div className="btn btn-d" onClick={cartItem.quantity>1?()=>removeItem(cartItem):()=>deleteItem(cartItem)}>
                     <div className="btn-dec"></div> 
                 </div>
 
                 <span className="quantity">{quantity}</span>
-                <div className="btn" onClick={()=>addItem(cartItem)}>
+                <div className="btn btn-i" onClick={()=>addItem(cartItem)}>
                     <div className="btn-inc"></div>
                 </div>
             </div>

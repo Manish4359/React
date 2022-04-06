@@ -44,10 +44,11 @@
                 text-transform: uppercase;
             }
             &> span{
-                width: 10%;
+                justify-items: baseline;
+                width: 20%;
                 padding: 0 10px;
             }
-            &:not(:last-child){
+            & > {
                 margin-bottom: 10px;
             }
         }

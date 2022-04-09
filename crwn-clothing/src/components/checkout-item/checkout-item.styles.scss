@@ -6,7 +6,7 @@
     padding: 10px;
     border: 2px solid transparent;
     border-radius: 10px;
-    background: rgba(94, 116, 243,1);
+    background: rgb(70, 163, 110);
     margin-bottom: 10px;
     color: white;
     transition: all 0.3s;
@@ -26,12 +26,12 @@
 
     .product-details {
         width: 100%;
-        //margin-right: 20px;
         display: flex;
         flex-direction: row;
-        //justify-content: space-evenly;
         align-items: baseline;
         padding: 5px;
+        //justify-content: space-evenly;
+        //margin-right: 20px;
 
         .product-name {
             text-transform: capitalize;
@@ -48,8 +48,8 @@
         .product-quantity {
 
             display: flex;
-            //justify-content: space-evenly;
             align-items: center;
+            //justify-content: space-evenly;
 
             .btn {
                 position: relative;
@@ -120,9 +120,7 @@
             .btn-i:hover {
                 background-color: rgb(0, 255, 21);
 
-
                 &>.btn-inc {
-
                     background-color: white;
 
                     &::before {
@@ -141,9 +139,10 @@
 
     }
 
-    & > .product-remove{
+    &>.product-remove {
         display: none;
     }
+
     .product-remove {
         position: absolute;
         right: 5px;
@@ -201,8 +200,8 @@
         background: rgb(61, 129, 207);
         border: 2px solid rgb(62, 105, 184);
         color: rgb(255, 255, 255);
-    
-        & >.product-remove{
+
+        &>.product-remove {
             display: block;
         }
     }

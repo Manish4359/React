@@ -10,52 +10,53 @@ import CheckoutItem from "../../components/checkout-item/checkout-item.component
 
 import StripeCheckoutButton from "../../components/stripe-button/stripe-button.component";
 
-import './checkout.styles.scss';
+import { CheckoutContainer, CartContainer, PriceDetailsText, Price, PriceContainer } from "./checkout.styles";
 
 const CheckoutPage = ({ cartItems, total, cartItemsTotal }) => (
-    <div className="checkout">
+    <CheckoutContainer>
 
-        <div className="cart">
-                {
-                cartItems.length?
-                cartItems.map(cartItem => <CheckoutItem key={cartItem.id} cartItem={cartItem}/>):
-                <span>Your cart is Empty !!!</span>}
-        </div>
+        {
+            cartItems.length ?
+                (<CartContainer>
+                {cartItems.map(cartItem => <CheckoutItem key={cartItem.id} cartItem={cartItem} />)}
+                </CartContainer>) :
+                <span>Your cart is Empty !!!</span>
+        }
 
-        {cartItems.length?
-        <div className="price-details">
-            <h3 >price details({cartItemsTotal} items)</h3>
-            <div className="prices">
-                <div className="detail-type">price</div>
-                <span>&#8377;{total}</span>
+        {cartItems.length ?
+            <PriceContainer>
+                <PriceDetailsText>price details({cartItemsTotal} items)</PriceDetailsText>
+                <Price>
+                    <div >price</div>
+                    <span>&#8377;{total}</span>
 
-            </div>
-            <div className="prices">
-                <div className="detail-type">discount</div>
-                <span>-&#8377;40</span>
+                </Price>
+                <Price>
+                    <div >discount</div>
+                    <span>-&#8377;40</span>
 
-            </div>
-            <div className="prices">
-                <div className="detail-type">delivery charges</div>
-                <span>&#8377;0</span>
+                </Price>
+                <Price>
+                    <div >delivery charges</div>
+                    <span>&#8377;0</span>
 
-            </div>
-            <div className="prices price-total">
-                <div className="detail-type">total price</div>
-                <span>&#8377;{total}</span>
+                </Price>
+                <Price>
+                    <div >total price</div>
+                    <span>&#8377;{total}</span>
 
-            </div>
-            <StripeCheckoutButton price={total}/>
+                </Price>
+                <StripeCheckoutButton price={total} />
 
-            <div className="test-warning">
-                <br />
-                <br />
-                **use these test card details**
-                <br />
-                4242424242424242 ; date-any future ; date cv-any 3 digit number
-            </div>
-        </div>:""}
-    </div>
+                <div className="test-warning">
+                    <br />
+                    <br />
+                    **use these test card details**
+                    <br />
+                    4242424242424242 ; date-any future ; date cv-any 3 digit number
+                </div>
+            </PriceContainer> : ""}
+    </CheckoutContainer>
 )
 const mapStateToProps = createStructuredSelector({
 

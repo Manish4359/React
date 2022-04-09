@@ -6,12 +6,12 @@ import { addItem } from "../../redux/cart/cart.actions";
 import { removeItems } from "../../redux/cart/cart.actions";
 import { deleteItems } from "../../redux/cart/cart.actions";
 
-import './checkout-item.styles.scss';
+import { ProductContainer,ProductImage,ProductDetails,ProductName,ProductPrice,ProductQuantity,ProductRemoveBtn,RemoveIcon,ProductIncreaseBtn,ProductDecreaseBtn,DecreaseIcon,IncreaseIcon } from "./checkout-item.styles";
 
 const CheckoutItem = ({cartItem,deleteItem,addItem,removeItem}) => {
     const {price,quantity,name,imageUrl}=cartItem;
     return (
-    <div className="product">
+    /*<div className="product">
         <div className="product-image">
 
             <img className="image" src={imageUrl} alt="product image" />
@@ -37,7 +37,35 @@ const CheckoutItem = ({cartItem,deleteItem,addItem,removeItem}) => {
         <div className="product-remove" onClick={()=>deleteItem(cartItem)}>
             <div className="close"></div>
         </div>
-    </div>
+    </div>*/
+    <ProductContainer>
+        <ProductImage>
+
+            <img className="image" src={imageUrl} alt="product image" />
+        </ProductImage>
+
+        <ProductDetails>
+
+            <ProductName>{name}</ProductName>
+            <ProductPrice>&#8377;{price}</ProductPrice>
+
+            <ProductQuantity>
+                <ProductDecreaseBtn onClick={cartItem.quantity>1?()=>removeItem(cartItem):()=>deleteItem(cartItem)}>
+                    <DecreaseIcon /> 
+                </ProductDecreaseBtn>
+
+                <span className="quantity">{quantity}</span>
+                <ProductIncreaseBtn onClick={()=>addItem(cartItem)}>
+                    <IncreaseIcon />
+                </ProductIncreaseBtn>
+            </ProductQuantity>
+
+        </ProductDetails>
+
+        <ProductRemoveBtn onClick={()=>deleteItem(cartItem)}>
+            <RemoveIcon />
+        </ProductRemoveBtn>
+    </ProductContainer>
 )};
 
 const mapDispatchToProps=dispatch=>({

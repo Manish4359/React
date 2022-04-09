@@ -1,10 +1,13 @@
-.sign-up {
-  width: 30vw;
+import styled from "styled-components";
+
+export const SignUpContainer=styled.div`
+
+width: 30vw;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
 
-  .title {
+  &>h2 {
     text-transform: capitalize;
   }
-}
+`

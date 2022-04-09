@@ -18,7 +18,7 @@
   transition: all 0.5s;
 
   &:hover {
-    background: rgb(60, 58, 163);
+    background: rgb(98, 58, 163);
     transform: translateY(-5px);
     box-shadow: 2px 2px gray;
     //border-bottom: 2px solid rgb(66, 63, 245);
@@ -26,10 +26,11 @@
 }
 
 .signinwithgoogle {
-  background: brown;
+  background: rgb(210, 54, 54);
 }
+
 .addtocartbutton {
-  background: rgb(44, 109, 77);
+  background: rgb(95, 186, 140);
   padding: 0 25px;
   margin: 0;
   height: 40px;

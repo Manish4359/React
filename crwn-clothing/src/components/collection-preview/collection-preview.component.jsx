@@ -1,23 +1,22 @@
 import React from "react";
-import { connect } from "react-redux";
 
 import CollectionItem from "../collection-item/collection-item.component";
-import "./collection-preview.styles.scss";
+import { CollectionPreviewContainer,Title,Item,Preview } from "./collection-preview.styles";
 
 const CollectionPreview = ({ title, items }) => (
-  <div className="collection-preview">
-    <h1 className="title">{title.toUpperCase()}</h1>
-    <div className="preview">
+  <CollectionPreviewContainer>
+    <Title>{title.toUpperCase()}</Title>
+    <Preview>
       {items.map((item, index) => {
         {
           if (index > 3) return;
         }
 
-        return <div className="item" key={item.id}><CollectionItem  item={item} /></div>;
+        return <Item key={item.id}><CollectionItem  item={item} /></Item>;
 
       })}
-    </div>
-  </div>
+    </Preview>
+  </CollectionPreviewContainer>
 );
 
 export default CollectionPreview;

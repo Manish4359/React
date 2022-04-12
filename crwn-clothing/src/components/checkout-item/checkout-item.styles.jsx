@@ -2,6 +2,9 @@ import styled, { css } from "styled-components";
 
 
 
+const incBackground=`rgb(0, 255, 21)`
+const decBackground=`red`
+
 const btn = background=> css`
 position: relative;
 width: 25px;
@@ -17,7 +20,7 @@ transition: all 0.3s
 
 
 &:hover{
-    ${background};
+    background:${background};
     transform: scale(1.25);
     
     &> div {
@@ -31,8 +34,6 @@ transition: all 0.3s
 
 `
 
-const incBackground=css`background-color: rgb(0, 255, 21);`
-const decBackground=css`background-color: red;`
 
 export const ProductContainer = styled.div`
 
@@ -41,74 +42,101 @@ export const ProductContainer = styled.div`
     justify-content: baseline;
     align-items: center;
     padding: 10px;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    background: rgb(70, 163, 110);
-    margin-bottom: 10px;
+    //border-radius: 10px;
+    //background: #a985e6;
+    margin: 10px 0;
     color: white;
-    transition: all 0.3s;
+    transition: all 0.4s;
+    overflow:hidden;
+    background: #444;
 
+    
     & > :last-child{
         display: none;
     }
 
     &:hover {
-        transform: scale(1.02);
-        background: rgb(61, 129, 207);
-        border: 2px solid rgb(62, 105, 184);
-        color: rgb(255, 255, 255);
+        //transform: translateX(-70px);
+        
+        //color: white;
     
         & > :last-child{
             display: block;
+            background-color: red;
+            
         }
     }
 `
-export const ProductImage = styled.div`
-width: 30%;
-margin-right: 20px;
+export const Product = styled.div`
+    width: 40%;
+    //margin-right: 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-& > img {
-    height: 100px;
-    width: 100px;
-}
-`
+
+
+    & > img {
+        height: 100px;
+        width: 100px;
+        margin-right:10px;
+    }
+
+    & >span{
+        text-transform: capitalize;
+        width: 40%;
+        font-weight: 400;
+        font-size: 20px;
+        font-size:16px;
+    }
+    `
 
 export const ProductDetails = styled.div`
-    width: 100%;
+    width: 60%;
     display: flex;
     flex-direction: row;
+    justify-content:space-evenly;
     align-items: baseline;
     padding: 5px;`
 
-export const ProductName = styled.div`
-    text-transform: capitalize;
-    width: 40%;
-    font-weight: 400;
-    font-size: 20px;`
+ 
 
 export const ProductPrice = styled.span`
-    width: 20%;
     font-size: 20px;`
 
+export const ProductPriceTotal=styled.span`
+    font-size: 20px;`
+    
 export const ProductQuantity = styled.div`
     display: flex;
-    align-items: center;`
+    align-items: center;
+    
+    &>span{
+        border:1px solid #ccc;
+        padding:0 10px;
+        margin:0 5px;
+        background:white;
+        color:black;
+        font-weight:500;
+    }
+    `
 
 export const ProductRemoveBtn = styled.div`
         position: absolute;
-        right: 5px;
-        top: 5px;
+        right: 0px;
+        top: 0px;
         cursor: pointer;
-        padding: 2px;
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        background-color: white;
-        transition: all 0.3s;
+        //padding: 2px;
+        height: 100%;
+        width: 70px;
+        //border-radius: 50%;
+        //background-color: red;
+        transition: all 0.4s;
 
         &:hover {
-            transform: scale(1.25);
-            background-color: red;
+            //transform: scale(1.03);
+           
+            //background-color: red;
 
             &>div {
                 background-color: white;
@@ -124,8 +152,8 @@ export const RemoveIcon=styled.div`
     left: 50%;
     top: 50%;
 
-    width: 12px;
-    height: 2px;
+    width: 30px;
+    height: 3px;
 
     background-color: black;
     transform: translate(-50%, -50%) rotateZ(45deg);
@@ -136,8 +164,8 @@ export const RemoveIcon=styled.div`
         left: 50%;
         top: 50%;
 
-        width: 12px;
-        height: 2px;
+        width: 30px;
+        height: 3px;
 
         background-color: black;
         transform: translate(-50%, -50%) rotateZ(90deg);
@@ -145,33 +173,12 @@ export const RemoveIcon=styled.div`
 export const ProductIncreaseBtn = styled.div`${btn(incBackground)}`
 export const ProductDecreaseBtn = styled.div` ${btn(decBackground)}`
 
-const btnIcon=css`
-box-sizing: border-box;
-position: absolute;
-left: 50%;
-top: 50%;
 
-width: 10px;
-height: 2px;
 
-background-color: black;
-transform: translate(-50%, -50%);`
-
-export const IncreaseIcon = styled.div`
-
-    ${btnIcon}
-
-    &::before {
-        content: "";
-        box-sizing: border-box;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-
-        width: 10px;
-        height: 2px;
-
-        background-color: black;
-        transform: translate(-50%, -50%) rotateZ(90deg);
+const icon=css`
+    height:10px;
+    width:10px;
 `
-export const DecreaseIcon = styled.div`${btnIcon}`
+
+export const IncreaseIcon = styled.img`${icon}`
+export const DecreaseIcon = styled.img`${icon}`

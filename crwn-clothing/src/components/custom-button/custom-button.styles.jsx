@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 const addtoCartButtonStyles = css`
-background: rgb(44, 109, 77);
+
   padding: 0 25px;
   margin: 0;
   height: 40px;
@@ -23,30 +23,32 @@ const getButtonStyles=props=>{
         return signInWithGoogleStyles;
     }
     if(props.addtocartbutton){
-        return addtoCartButtonStyles
+        return addtoCartButtonStyles;
     }
 }
 
 export const CustomButtonContainer = styled.button`
 
-    min-width: 165px;
+    min-width: 145px;
     width: auto;
     height: 50px;
-    padding: 0 35px;
+    padding: 0 25px;
     margin: 0 5px;
     font-size: 15px;
-    background: rgb(14, 12, 105);
+    background: #a985e6;
     background-size: 100%;
     color: white;
     text-transform: uppercase;
     font-family: "Open Sans Condensed";
+    //border-radius:25px;
     cursor: pointer;
     transition: all 0.5s;
+    border:none;
 
     &:hover {
-    background: rgb(60, 58, 163);
+    background: #000;
     transform: translateY(-5px);
-    box-shadow: 2px 2px gray;
+    box-shadow: 2px 2px 5px #ccc;
     }
 
     ${getButtonStyles}

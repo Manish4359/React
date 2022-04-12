@@ -1,7 +1,7 @@
 import styled,{css} from "styled-components";
 
 export const MenuItemContainer=styled.div`
-    min-width: 30%;
+    min-width: 32%;
     height: 240px;
     flex: 1 1 auto;
     display: flex;
@@ -20,6 +20,11 @@ export const MenuItemContainer=styled.div`
         opacity: 1;
         }
     }
+
+    @media only screen and (max-width: 570px) {
+        & {
+         padding:50px;
+        }
 `
 export const BackgroundImage=styled.div`
     width: 100%;

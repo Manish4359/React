@@ -9,7 +9,7 @@ export const CollectionItemContainer=styled.div`
     transition: all 0.3s;
     position: relative;
     box-shadow: 5px 5px 40px 5px rgb(219, 219, 219);
-    border-radius: 10px;
+    //border-radius: 10px;
     overflow: hidden;
     background: rgb(255, 255, 255);
 
@@ -53,7 +53,7 @@ export const CollectionItemFooter=styled.div`
 `
 
 export const Name=styled.span`
-    width: 90%;
+    
     margin-bottom: 15px;`
 
 export const Price=styled.div`

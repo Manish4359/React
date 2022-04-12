@@ -3,6 +3,8 @@ import React from "react";
 import CollectionItem from "../collection-item/collection-item.component";
 import { CollectionPreviewContainer,Title,Item,Preview } from "./collection-preview.styles";
 
+
+
 const CollectionPreview = ({ title, items }) => (
   <CollectionPreviewContainer>
     <Title>{title.toUpperCase()}</Title>
@@ -15,6 +17,9 @@ const CollectionPreview = ({ title, items }) => (
         return <Item key={item.id}><CollectionItem  item={item} /></Item>;
 
       })}
+
+
+
     </Preview>
   </CollectionPreviewContainer>
 );

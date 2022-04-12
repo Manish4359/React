@@ -17,7 +17,7 @@ import { selectCurrentUser } from "../../redux/user/user.selectors";
 
 
 
-const Header = ({ currentUser, hidden }) => (
+const Header = ({ currentUser, hidden ,history}) => (
   <HeaderContainer>
     <LogoLink to="/">
       <LogoContainer />
@@ -27,7 +27,7 @@ const Header = ({ currentUser, hidden }) => (
       <OptionLink to="/shop">
         SHOP
       </OptionLink>
-      <OptionLink to="/Contact">
+      <OptionLink type={'contact'} to="/Contact">
         CONTACT
       </OptionLink>
       {currentUser ? (
@@ -39,8 +39,14 @@ const Header = ({ currentUser, hidden }) => (
           SIGN IN
         </OptionLink>
       )}
-      <OptionCartIcon/>
-      {hidden ? null : <CartDropdown />}
+
+      
+      <OptionLink cart={'cart'} to="/checkout" >
+        <OptionCartIcon/>
+        </OptionLink>
+        
+     
+      {/*hidden ? null : <CartDropdown />*/}
     </OptionsContainer>
   </HeaderContainer>
 );

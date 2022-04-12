@@ -1,8 +1,25 @@
 body {
   padding: 20px 80px;
   background-color: rgb(255, 255, 255);
+
 }
 
+@media only screen and (max-width: 720px) {
+  body {
+   padding:20px 60px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  body {
+   padding:20px 40px;
+  }
+}
+@media only screen and (max-width: 570px) {
+  body {
+   padding:20px 20px;
+  }
+}
 body::-webkit-scrollbar {
   width: 10px;
 }

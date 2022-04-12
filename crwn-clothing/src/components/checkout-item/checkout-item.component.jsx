@@ -6,8 +6,9 @@ import { addItem } from "../../redux/cart/cart.actions";
 import { removeItems } from "../../redux/cart/cart.actions";
 import { deleteItems } from "../../redux/cart/cart.actions";
 
-import { ProductContainer,ProductImage,ProductDetails,ProductName,ProductPrice,ProductQuantity,ProductRemoveBtn,RemoveIcon,ProductIncreaseBtn,ProductDecreaseBtn,DecreaseIcon,IncreaseIcon } from "./checkout-item.styles";
-
+import { ProductContainer,Product,ProductDetails,ProductPrice,ProductQuantity,ProductRemoveBtn,RemoveIcon,ProductIncreaseBtn,ProductDecreaseBtn,DecreaseIcon,IncreaseIcon,ProductPriceTotal } from "./checkout-item.styles";
+import plus from './../../assets/plus.svg'
+import minus from './../../assets/minus.svg'
 const CheckoutItem = ({cartItem,deleteItem,addItem,removeItem}) => {
     const {price,quantity,name,imageUrl}=cartItem;
     return (
@@ -39,26 +40,28 @@ const CheckoutItem = ({cartItem,deleteItem,addItem,removeItem}) => {
         </div>
     </div>*/
     <ProductContainer>
-        <ProductImage>
+        <Product>
 
-            <img className="image" src={imageUrl} alt="product image" />
-        </ProductImage>
+            <img src={imageUrl} alt="product" />
+            <span>{name}</span>
+        </Product>
 
         <ProductDetails>
 
-            <ProductName>{name}</ProductName>
-            <ProductPrice>&#8377;{price}</ProductPrice>
 
             <ProductQuantity>
                 <ProductDecreaseBtn onClick={cartItem.quantity>1?()=>removeItem(cartItem):()=>deleteItem(cartItem)}>
-                    <DecreaseIcon /> 
+                    <DecreaseIcon  src={minus} /> 
                 </ProductDecreaseBtn>
 
-                <span className="quantity">{quantity}</span>
+                <span>{quantity}</span>
                 <ProductIncreaseBtn onClick={()=>addItem(cartItem)}>
-                    <IncreaseIcon />
+                    <IncreaseIcon src={plus}/>
                 </ProductIncreaseBtn>
             </ProductQuantity>
+            <ProductPrice>&#8377;{price}</ProductPrice>
+            <ProductPriceTotal>&#8377;{price*quantity}</ProductPriceTotal>
+
 
         </ProductDetails>
 

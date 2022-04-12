@@ -16,6 +16,8 @@ import {selectCurrentUser} from './redux/user/user.selectors';
 
 import CheckoutPage from "./pages/checkout/checkout.component";
 
+import Stripe from "./components/stripe/stripe";
+
 class App extends React.Component {
   unsubscribeFromAuth = () => null;
 
@@ -51,6 +53,7 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route exact path="/stripe" component={Stripe} />
           <Route path="/shop" component={ShopPage} />
           <Route exact path="/signin" render={() =>
             this.props.currentUser ? (

@@ -8,26 +8,29 @@ import Header from "./components/header/header.component";
 import { Redirect } from "react-router";
 import { connect } from "react-redux";
 
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
 
 import { createStructuredSelector } from "reselect";
-import {selectCurrentUser} from './redux/user/user.selectors';
+import { selectCurrentUser } from './redux/user/user.selectors';
+
 
 import CheckoutPage from "./pages/checkout/checkout.component";
 
 import Stripe from "./components/stripe/stripe";
 
+import { auth, createUserProfileDocument ,addCollectionsAndDocuments} from "./firebase/firebase.utils";
+//import {selectShopCollectionsForPreview} from'./redux/shop/shop.selector';
 class App extends React.Component {
-  unsubscribeFromAuth = () => null;
+  unsubscribeFromAuth = null;
 
   componentDidMount() {
+
     const { setCurrentUser } = this.props;
 
-    auth.onAuthStateChanged(async (userAuth) => {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
- 
+
         userRef.onSnapshot((snapShot) => {
           setCurrentUser({
             id: snapShot.id,
@@ -35,11 +38,10 @@ class App extends React.Component {
           });
         });
 
-        // console.log(this.state);
-      } else {
-        setCurrentUser(userAuth); //currentUser:null
       }
-      //this.setState({ currentUser: user });
+      
+      setCurrentUser(userAuth);
+     // addCollectionsAndDocuments('collections',collectionsArray.map(({title,items})=>({title,items})));
     });
   }
 
@@ -72,6 +74,7 @@ class App extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
+ // collectionsArray:selectShopCollectionsForPreview
 });
 
 const mapDispatchToProps = (dispatch) => ({

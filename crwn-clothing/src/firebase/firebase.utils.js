@@ -15,11 +15,12 @@ const config = {
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
-  const userRef = await firestore.doc(`/users/${userAuth.uid}`);
+  const userRef = await firestore.doc(`/users/golu`);
 
-  const snapShot = await userRef.get();
-  console.log(snapShot);
- 
+   const snapShot = await userRef.get();
+
+   console.log(snapShot.data);
+
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
@@ -35,9 +36,50 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
       console.log("error creating user", err.message);
     }
   }
-
+  
   return userRef;
 };
+
+export const addCollectionsAndDocuments = async (collectionKey, objectsToAdd) => {
+
+  const collectionRef = firestore.collection(collectionKey);
+  console.log(collectionRef);
+
+
+  //group all the calls to firebase into one big request
+  const firestoreBatch = firestore.batch();
+
+  objectsToAdd.forEach(obj => {
+    const newDocRef = collectionRef.doc(); 
+    console.log(newDocRef);
+    firestoreBatch.set(newDocRef, obj); 
+  })
+
+  return await firestoreBatch.commit();
+
+}
+
+export const convertCollectionsSnapshotToMap=collections=>{
+  const transfirmedCOllection=collections.map( doc=>{
+
+
+    const {title,items}=doc.data();
+
+    return {
+      id:doc.id, 
+      title,
+      items,
+      routeName:encodeURI(title.toLowerCase())
+    }
+  }
+  
+  )
+  //console.log(transfirmedCOllection);
+ return transfirmedCOllection.reduce((acc,collection)=>{
+    acc[collection.title.toLowerCase()]=collection;
+    return acc;
+  },{});
+}
 
 firebase.initializeApp(config);
 

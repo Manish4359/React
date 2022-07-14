@@ -27,7 +27,20 @@ app.post('/create-payment-intent', async (req, res) => {
         const paymentIntent = await stripe.paymentIntents.create({
             amount: totalAmount*100,
             currency: "INR",
-            
+            /*billing_details: {
+                address: {
+                  city: null,
+                  country: "IN",
+                  line1: null,
+                  line2: null,
+                  postal_code: null,
+                  state: null
+                },
+                email: null,
+                name: null,
+                phone: null
+              },
+            */
 
         });
         res.send({

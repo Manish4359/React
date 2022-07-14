@@ -7,7 +7,7 @@ import { ReactComponent as Logo } from "./../../assets/logo.svg";
 
 import CartIcon from "../cart-icon/cart-icon.component";
 
-export const LogoLink=styled(Link)`
+export const LogoLink = styled(Link)`
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -57,7 +57,7 @@ export const OptionsContainer = styled.div`
 `
 
 export const OptionLink = styled(Link)`
-padding:${props=>props.cart?"":'10px 15px'};
+padding:${props => props.cart ? "" : '10px 15px'};
 font-weight: 600;
 color:white;
 &:hover{
@@ -67,14 +67,14 @@ color:white;
 
   @media only screen and (max-width: 400px) {
     
-    ${props=>props.type?'display:none':""}
+    ${props => props.type ? 'display:none' : ""}
 
 
   }
 `
 
 
-export const OptionCartIcon=styled(CartIcon)`
+export const OptionCartIcon = styled(CartIcon)`
 
 
 &:hover{

@@ -29,8 +29,10 @@ function StripePayment(props) {
 
 
   const options = {
-    theme: 'stripe',
-    clientSecret
+    clientSecret,
+    appearance : {
+      theme: 'stripe',
+    }
   };
 
 
@@ -40,7 +42,7 @@ function StripePayment(props) {
       <Elements stripe={stripePromise} options={options}>
         <CheckoutForm/>
       </Elements>
-      : ""
+      : "stripe error"
   );
 };
 

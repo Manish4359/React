@@ -1,4 +1,4 @@
-import styled,{css} from "styled-components";
+import styled from "styled-components";
 
 export const MenuItemContainer=styled.div`
     min-width: 32%;
@@ -63,7 +63,7 @@ export const ContentTitle=styled.h1`
     text-transform: uppercase;
     transition: all 0.5s;
     position: relative;
-    ${css``}
+    
 
     &:before {
         position: absolute;

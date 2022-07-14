@@ -48,7 +48,7 @@ export const ProductContainer = styled.div`
     color: white;
     transition: all 0.4s;
     overflow:hidden;
-    background: #444;
+    background: #222;
 
     
     & > :last-child{
